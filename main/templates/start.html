@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> NTS cloud </title>
+    <style>
+      .sidebar {
+        width:400px;
+        height:800px;
+        float:left;
+        background-color: cornflowerblue;
+      }
+      .content {
+        width:1150px;
+        height:800px;
+        margin-left:410px;
+        background-color: antiquewhite;
+      }
+      .form {
+        color:white;
+        margin: 40px;
+        }
+
+
+    </style>
+
+</head>
+<body>
+<div class = 'sidebar'>
+    <div class = 'form'> <h1>НТС Cloud</h1>  </div>
+    <form method="POST">
+          {% csrf_token %}
+        <div class='form'>
+            <h3>{{ form }}</h3>
+
+
+            <input type="submit" value="Войти">
+            <br><br><br><br><br><br><br><br><br>
+            <h3> Курсы валют на сегодня </h3>
+            <h4>{% now "j F Y " %}</h4>
+            <h4> {{euro}} </h4>
+            <h4> {{usd}} </h4>
+            <h4> {{rub}} </h4>
+        </div>
+
+    </form>
+
+</div>
+<div class = 'content'>
+<div><img src="{% static 'more.jpg' %}" /></div>
+</div>
+</body>
+</html>
